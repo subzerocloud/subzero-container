@@ -21,6 +21,7 @@ COPY openresty/lua /usr/local/openresty/lualib/user_code
 COPY supervisord/supervisord.conf /etc/supervisord.conf
 COPY supervisord/openresty.conf /etc/supervisor.d/openresty.conf
 COPY supervisord/postgrest.conf /etc/supervisor.d/postgrest.conf
+COPY supervisord/eventlistener.conf /etc/supervisor.d/eventlistener.conf
 
 RUN mkdir -p /var/log/supervisor \
     && mkdir -p /var/cache/nginx && chown nobody:nogroup /var/cache/nginx
