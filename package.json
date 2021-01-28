@@ -1,0 +1,19 @@
+{
+  "name": "starter-kit",
+  "author": "ruslan.talpa@subzero.cloud",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-preset-latest": "^6.24.1",
+    "dotenv": "4.0.0",
+    "jsonwebtoken": "^8.3.0",
+    "mocha": "^6.2.0",
+    "should": "^11.2.0",
+    "supertest": "^3.0.0"
+  },
+  "scripts": {
+    "test_graphql": "mocha  --no-timeouts --require babel-core/register ./tests/graphql/",
+    "test_rest": "mocha --no-timeouts --require babel-core/register ./tests/rest/",
+    "test": "$npm_execpath run test_rest && $npm_execpath run test_graphql"
+  }
+}
