@@ -15,7 +15,7 @@ grant execute on function api.me() to webuser;
 grant execute on function api.login(text,text) to webuser;
 grant execute on function api.logout() to webuser;
 grant execute on function api.refresh_token() to webuser;
-grant execute on function on_oauth_login(text,json) to proxy;
+grant execute on function api.on_oauth_login(text,json) to proxy;
 
 -- define the who can access todo model data
 -- enable RLS on the table holding the data

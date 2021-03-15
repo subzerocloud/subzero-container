@@ -33,13 +33,6 @@ create extension if not exists pgcrypto;
 
 
 
-
-
--- save app settings (they are storred in the settings.secrets table)
-select settings.set('jwt_secret', :quoted_jwt_secret);
-select settings.set('jwt_lifetime', '3600');
-
-
 \echo # Loading application definitions
 
 -- private schema where all tables will be defined
@@ -56,6 +49,14 @@ select settings.set('jwt_lifetime', '3600');
 \echo # Loading roles and privilege settings
 \ir authorization/roles.sql
 \ir authorization/privileges.sql
+
+
+select settings.set('jwt_secret', :quoted_jwt_secret);
+select settings.set('jwt_lifetimet', '3600');
+-- alter role usually does nto work in cloud databases
+-- alter role :"authenticator" set pgrst.jwt_lifetimet = '3600';
+-- alter role :"authenticator" set pgrst.jwt_secret = :quoted_jwt_secret;
+
 
 \echo # Loading sample data
 \ir sample_data/data.sql
