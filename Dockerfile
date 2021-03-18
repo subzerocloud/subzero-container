@@ -3,7 +3,7 @@
 ARG REGISTRY="subzerocloud"
 ARG DEVELOPMENT_BUILD="-development"
 ARG POSTGREST_TAG="v7.0.1.5"
-ARG OPENRESTY_TAG="1.19.3.1-alpine-v2.1"
+ARG OPENRESTY_TAG="1.19.3.1-alpine-v2.2"
 ARG NGINX_TAG="1.19.3-alpine"
 
 # FROM nginx:${NGINX_TAG} as nginx
