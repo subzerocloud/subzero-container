@@ -7,7 +7,7 @@ on:
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 env:
-  POSTGREST_TAG: v7.0.1.5
+  POSTGREST_TAG: v7.0.1.7
   OPENRESTY_TAG: 1.19.3.1-alpine-v2.2
   PRODUCTION_REGISTRY: ${{ secrets.PRODUCTION_REGISTRY }}
 

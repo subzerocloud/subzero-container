@@ -2,7 +2,7 @@
 # docker build -t subzerocloud/subzero-development .
 ARG REGISTRY="subzerocloud"
 ARG DEVELOPMENT_BUILD="-development"
-ARG POSTGREST_TAG="v7.0.1.5"
+ARG POSTGREST_TAG="v7.0.1.7"
 ARG OPENRESTY_TAG="1.19.3.1-alpine-v2.2"
 ARG NGINX_TAG="1.19.3-alpine"
 
