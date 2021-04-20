@@ -23,6 +23,10 @@ export function rest_service () {
   return request(process.env.SERVER_PROXY_URI)
 }
 
+export function odata_service () {
+  return request(process.env.SERVER_PROXY_URI.replace('rest', 'odata' ))
+}
+
 export function graphql_simple() { 
   return request(process.env.SERVER_PROXY_URI.replace('rest', 'graphql/simple' ))
             .post('/')
