@@ -10,6 +10,7 @@ local db_conection_info = {
     ssl = true
 }
 
+auto_ssl:init_worker()
 
 local function listen_db_schema_change()
     local db = pgmoon.new(db_conection_info)

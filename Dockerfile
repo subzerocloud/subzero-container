@@ -3,7 +3,7 @@
 ARG REGISTRY="subzerocloud"
 ARG DEVELOPMENT_BUILD="-development"
 ARG POSTGREST_TAG="v7.0.1.7"
-ARG OPENRESTY_TAG="1.19.3.1-alpine-v2.3"
+ARG OPENRESTY_TAG="1.19.3.1-alpine-v2.4"
 ARG NGINX_TAG="1.19.3-alpine"
 
 # FROM nginx:${NGINX_TAG} as nginx
@@ -89,6 +89,9 @@ ENV OAUTH_FACEBOOK_AUTHORIZATION_URL=https://www.facebook.com/v3.2/dialog/oauth
 ENV OAUTH_FACEBOOK_TOKEN_URL=https://graph.facebook.com/v3.2/oauth/access_token
 ENV OAUTH_FACEBOOK_USERINFO_URL=https://graph.facebook.com/v3.2/me
 ENV OAUTH_FACEBOOK_SCOPE=email
+
+ENV SSL_ALLOWED_DOMAINS=
+ENV PATH=$PATH:/usr/local/openresty/openssl/bin
 
 
 CMD ["/usr/bin/supervisord","-n", "-c", "/etc/supervisord.conf"]
