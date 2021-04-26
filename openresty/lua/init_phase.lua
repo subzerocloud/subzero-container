@@ -23,7 +23,11 @@ auto_ssl = (require "resty.auto-ssl").new()
 auto_ssl:set(
     "allow_domain",
     function(domain, auto_ssl, ssl_options, renewal)
-        local allowed_domains = os.getenv('SSL_ALLOWED_DOMAINS')
+        local allowed_domains = stringx.strip(os.getenv('SSL_ALLOWED_DOMAINS'))
+        if allowed_domains == '' then
+            return true
+        end
+
         allowed_domains = totable(map(stringx.strip, stringx.split(allowed_domains, ',')))
         if tablex.find(allowed_domains, domain) then
             return true
